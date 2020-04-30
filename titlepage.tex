@@ -1,0 +1,50 @@
+% File: titlepage.tex
+% Project: LabReport
+% File Created: 2020年04月30日 9:16:29 pm
+% Author: CyFio (1838672185@qq.com)
+% -----
+% Last Modified: 2020年04月30日 9:40:13 pm
+% Modified By: CyFio (1838672185@qq.com>)
+% -----
+% 建议改成: 标准开头
+% 使用方法: 通过\include命令在正文区引用
+% 变量引用清单
+% \YourUniversity 你的大学
+% \YourSchool     你的学院
+% \YourMajor      你的专业
+% \ReportForm     报告题目
+% \YourCourse     你的课程
+% \YourName       你的姓名
+% \YourNumber     你的学号
+% \YourTeacher    指导老师
+
+\newcommand{\reporttitle}[2]{
+  \LARGE{#1:}\ \underline{\makebox[8em]{#2}}
+}
+\newcommand{\reportinfo}[2]{
+  \Large\makebox[4em]{#1:}\ \underline{\makebox[6em]{#2}}
+}
+
+\begin{titlepage}
+    % this is titlepage
+    % \section{A}
+    %     section defined in titlepage
+    % \setcounter{page}{0}
+    \newgeometry{left=2cm,right=2cm,top=2.54cm,bottom=2.54cm}
+    ~\\[30pt]
+    \centerline{\fontsize{28}{50}\selectfont \YourUniversity}
+    ~\\[48pt]
+    \centerline{\fontsize{32}{50}\selectfont \ReportForm}
+    ~\\[72pt]
+    \centerline{\reporttitle{课程名称}{\YourCourse}}
+    ~\\[200pt]
+    \begin{center}  
+        \reportinfo{姓\hspace{\fill}名}{\YourName}\reportinfo{学\hspace{\fill}号}{\YourNumber}\\
+        \reportinfo{学\hspace{\fill}院}{\YourSchool}\reportinfo{专\hspace{\fill}业}{\YourMajor}\\
+        \reportinfo{指导老师}{\YourTeacher}\reportinfo{评定成绩}{ }\\
+    \end{center}
+    ~\\[32pt]
+    \centerline{\fontsize{18}{50}\selectfont \ReportDate}
+    \thispagestyle{empty}
+    \restoregeometry
+\end{titlepage}

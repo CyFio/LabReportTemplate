@@ -1,0 +1,49 @@
+% File: template.tex
+% Project: LabReport
+% File Created: 2020年04月30日 9:16:22 pm
+% Author: CyFio (1838672185@qq.com)
+% -----
+% Last Modified: 2020年04月30日 9:40:57 pm
+% Modified By: CyFio (1838672185@qq.com>)
+% -----
+
+% AutoFakeBold可解决中文字体无法加粗的问题
+\documentclass[a4paper, 12pt, AutoFakeBold]{article}
+
+% package declarations 包引用声明
+\usepackage{ctex}       % 中文支持
+% \usepackage{xeCJK}
+\usepackage{geometry}   % 页面设置包
+\usepackage{graphicx}   % 图片包
+\usepackage{fontspec}
+
+% Settings
+\setmainfont{Times New Roman}
+% \setmainfont{Lucida Console}
+\setCJKmainfont{宋体}
+\geometry{left=2cm,right=2cm,top=2.54cm,bottom=2.54cm}
+% includes
+\includeonly{titlepage}
+
+% defines
+\newcommand{\YourUniversity}{岛市大学}
+\newcommand{\YourSchool}{撤硕学院}
+\newcommand{\YourMajor}{美食鉴赏}
+\newcommand{\ReportForm}{个人项目报告}
+\newcommand{\YourCourse}{汉堡设计导论}
+\newcommand{\YourName}{奥利给}
+\newcommand{\YourNumber}{88888888}
+\newcommand{\YourTeacher}{老八}
+\date{}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+\newcommand{\ReportDate}{2020 年 4 月 22 日}
+% 正文
+\begin{document}
+\include{titlepage}
+
+eh?
+
+dkfjaksdf
+\newpage
+这是中文
+\end{document}

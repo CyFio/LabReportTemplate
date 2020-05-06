@@ -11,19 +11,57 @@
 \documentclass[a4paper, 12pt, AutoFakeBold]{report}
 
 % package declarations 包引用声明
-\usepackage{ctex}       % 中文支持
-% \usepackage{xeCJK}
+\usepackage{ctex}       % 中文
 \usepackage{geometry}   % 页面设置包
 \usepackage{graphicx}   % 图片包
-\usepackage{fontspec}
+\usepackage{fontspec}   % 指定字体
+\usepackage{booktabs}   % 表格
+\usepackage{hyperref}   % 交叉引用
+\usepackage{color}      % 搞颜色
+\usepackage{listings}   % 代码块
+\usepackage{amsmath}    % 公式
+
+% Configs
+\input{configs/config_chart.tex}
 
 % Settings
 \setmainfont{Times New Roman}
-% \setmainfont{Lucida Console}
-\setCJKmainfont{宋体}
+% \setCJKmainfont{宋体}
 \geometry{left=2cm,right=2cm,top=2.54cm,bottom=2.54cm}
 % includes
-\includeonly{titlepage,chapter_template}
+% \includeonly{titlepage,chapters/chapter_template}
+% imagepath
+\graphicspath{{figures/}}
+% hyperlink
+\hypersetup{hidelinks}  % 交叉引用不显示特殊格式(默认有红框)
+% C++
+\lstdefinestyle{cpp-style}{
+  language=C++,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\bfseries\color[rgb]{0, 0, 1},
+  identifierstyle=\color[rgb]{0.5, 0.3, 0.1},
+  stringstyle=\color[rgb]{0.6, 0.1, 0.1},
+  commentstyle=\itshape\color[rgb]{0.05, 0.5, 0.05},
+  backgroundcolor=\color[gray]{0.95},
+  numbers=left,
+  numbersep=5pt,
+  numberstyle=\color[gray]{0.6},
+  breaklines=true
+}
+% Python
+\lstdefinestyle{Python}{ 
+    language=Python,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\bfseries\color[rgb]{0, 0, 1},
+    identifierstyle=\color[rgb]{0.5, 0.3, 0.1},
+    stringstyle=\color[rgb]{0.6, 0.1, 0.1},
+    commentstyle=\itshape\color[rgb]{0.05, 0.5, 0.05},
+    backgroundcolor=\color[gray]{0.95},
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\color[gray]{0.6},
+    breaklines=true
+}
 
 % defines
 \newcommand{\YourUniversity}{岛市大学}
@@ -41,5 +79,5 @@
 \begin{document}
 \include{titlepage}
 \tableofcontents
-\include{chapter_template}
+\include{chapters/chapter_sample}
 \end{document}

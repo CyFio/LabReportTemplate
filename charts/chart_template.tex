@@ -1,0 +1,40 @@
+% File: chart_template.tex
+% Project: charts
+% File Created: 2020年05月6日 10:31:38 am
+% Author: CyFio (1838672185@qq.com)
+% -----
+% Last Modified: 2020年05月6日 11:15:21 am
+% Modified By: CyFio (1838672185@qq.com>)
+% -----
+% A simple chart
+\begin{tikzpicture}[node distance=1.5cm, xshift = 3cm]
+    % 节点定义
+    \node[startstop](start){开始};
+    \node[process, below of = start](pro1){进入雅间};
+    \node[process, below of = pro1](pro2){老铁们想得到 = True};
+    \node[decision, below of = pro2, yshift = -0.5cm](dec1){老铁们想不到?};
+    \node[process, below of = dec1,yshift = -0.5cm](pro3){排出食材};
+    \node[process, below of = pro3](pro4){排序和筛选};
+    \node[process, below of = pro4](pro5){切开};
+    \node[process, below of = pro5](pro6){混合};
+    \node[process, below of = pro6](pro7){搓一顿};
+    \node[process, right of = dec1, xshift = 4.5cm, yshift = -1cm](pro8){拿起来};
+    \node[io, below of = pro8](pro9){奥里给!};
+    \node[io, below of = pro9](io1){干了};
+    \node[startstop, below of = io1](end){结束};
+
+    % 节点连接
+    \draw [arrow] (start) -- (pro1);
+    \draw [arrow] (pro1) -- (pro2);
+    \draw [arrow] (pro2) -- (dec1);
+    \draw [arrow] (dec1) -- node[anchor = east]{否}(pro3);
+    \draw [arrow] (dec1) -| node[anchor = south, xshift = -1.5cm]{是}(pro8);
+    \draw [arrow] (pro3) -- (pro4);
+    \draw [arrow] (pro4) -- (pro5);
+    \draw [arrow] (pro5) -- (pro6);
+    \draw [arrow] (pro6) -- (pro7);
+    \draw [arrow] (pro7.west) -- +(-2,0) |- (dec1); % 两拐箭头
+    \draw [arrow] (pro8) -- (pro9);
+    \draw [arrow] (pro9) -- (io1);
+    \draw [arrow] (io1) -- (end);
+\end{tikzpicture}

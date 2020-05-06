@@ -1,0 +1,21 @@
+% File: config_chart.tex
+% Project: configs
+% File Created: 2020年05月5日 3:06:28 pm
+% Author: CyFio (1838672185@qq.com)
+% -----
+% Last Modified: 2020年05月5日 3:08:11 pm
+% Modified By: CyFio (1838672185@qq.com>)
+% -----
+% configs for flow charts
+% you should \input this file before \input any chart tex files
+\usepackage{tikz}       % 流程图
+% Settings
+% tkiz
+\usetikzlibrary{shapes.geometric, arrows}
+% base styles
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width = 1.8cm, minimum height=0.8cm,text centered, draw = black]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1.8cm, minimum height=0.8cm, text centered, draw=black]
+\tikzstyle{process} = [rectangle, minimum width=2.5cm, minimum height=0.8cm, text centered, draw=black]
+\tikzstyle{decision} = [diamond, aspect = 3, text centered, draw=black]
+% arrow styles
+\tikzstyle{arrow} = [->,>=stealth]
